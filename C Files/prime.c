@@ -5,30 +5,41 @@ S/*
  *      Author: HP
  */
 
-#include<stdio.h>
+#include <stdio.h>
+ 
+/*function to check number is Prime or Not*/
+int isPrime(int num)
+{
+    char flag=0;
+    int i;
+     
+    for(i=2; i<=(num/2); i++)
+    {
+        if(num%i ==0)
+        {
+            flag=1;
+            break;
+        }
+    }
+     
+    if(flag==0)
+        return 1; /*prime number*/
+    else
+        return 0; /*not a prime number*/
+}
+ 
 int main()
 {
-	 setvbuf(stdout, NULL, _IONBF, 0);
-		setvbuf(stderr, NULL, _IONBF, 0);
-		int i,flag=0,m,n;
-		printf("enter the number\n");
-		scanf("%d",&n);
-		m=n/2;
-		for(i=2;i<m;i++)
-		{
-            if(n%i==0){
-
-           printf("number is primes");
-
-		    flag=1;
-				break;
-			}
-
-		}
-		if(flag=0){
-			printf("number is not primes");
-		}
-
-
+    int number;
+     
+    printf("Enter an integer number : ");
+    scanf("%d",&number);
+  
+ 
+    if(isPrime(number))
+        printf("\n%d is a prime number.",number);
+    else
+        printf("\n%d is not a prime number.",number);
+  
+    return 0;
 }
-
