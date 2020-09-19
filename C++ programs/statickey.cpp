@@ -1,12 +1,26 @@
-#include<iostream>
-void counter() {
-	static int count = 0;
-	std::cout<<count++;
+#include <iostream>
+using namespace std;
 
-}
-int main() {
-	for (int i = 0; i <=5; i++) {
-		counter();
-	}
+class Demo
+{
+private:
+	static int rollno;
+	
+public:
+	static void fun()
+	{
+		cout << "the roll is: " <<rollno<< endl;
+		 
+		}
+};
+
+//defining
+int Demo::rollno = 95;
+int main()
+{
+	Demo r;
+
+	r.fun();
+
 	return 0;
 }
