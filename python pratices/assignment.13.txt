@@ -1,0 +1,5 @@
+num=[3,4,7,2,5,1]
+
+num.sort(reverse = True)
+
+print(num)
